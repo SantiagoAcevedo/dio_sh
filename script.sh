@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]
+  then echo "Por favor, execute o script como root."
+  exit
+fi
+
 # Criação dos grupos
 sudo groupadd GRP_ADM
 sudo groupadd GRP_VEN
